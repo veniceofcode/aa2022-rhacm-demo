@@ -1,41 +1,31 @@
 ---
 controller_projects:
-  - name: Test Project
+  - name: ACM Ansible Collection Demo
     scm_type: git
-    scm_url: https://github.com/ansible/tower-example.git
+    scm_url: https://github.com/TheRealHaoLiu/acm-ansible-collection-demo
     scm_branch: master
     scm_clean: true
-    description: Test Project 1
+    description: ACM Ansible Collection Demo
     organization: Default
     wait: true
     update: true
   - name: Demo Project
     scm_type: git
-    scm_url: https://github.com/ansible/tower-example.git
+    scm_url: https://github.com/ansible/ansible-tower-samples
     scm_branch: master
     scm_clean: true
-    description: Test Project 1
+    description: Demo Project
     organization: Default
     wait: true
     update: true
-  - name: Test Project 2
+  - name: Rhoda
     scm_type: git
-    scm_url: https://github.com/ansible/ansible-examples.git
-    description: Test Project 2
+    scm_url: https://github.com/veniceofcode/rhoda
+    description: DBAAS
     organization: Default
-  - name: Test Inventory source project
+  - name: SNOW
     scm_type: git
-    scm_url: https://github.com/ansible/ansible-examples.git
-    description: ansible-examples
-    organization: Satellite
-  - name: Test Inventory source project with credential
-    scm_type: git
-    scm_url: https://github.com/ansible/ansible-examples.git
-    description: ansible-examples
-    organization: Satellite
-    credential: gitlab-personal-access-token for satqe_auto_droid
-    wait: false
-  - name: Test Project 3
+    scm_url: https://github.com/levenhagen/ansible_snow
+    description: Snow
     organization: Default
-    state: absent
 ...
