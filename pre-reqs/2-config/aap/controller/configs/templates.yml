@@ -4,18 +4,25 @@
 # Find the ID of the job template and use the following URL:
 # https://<controller_url>/api/v2/job_templates/<ID>/survey_spec/
 controller_templates:
-  - name: test-template-1
-    description: created by Ansible Playbook
+  - name: Snow Change Record Create
+    description: Create CR in SNOW
     job_type: run
-    inventory: RHVM-01
-    labels:
-      - Prod
-    credentials: admin@internal-RHVM-01
-    project: Test Project
-    playbook: helloworld.yml
-    verbosity: 2
-    extra_vars:
-      target_hosts: infra-ansible-tower-01.example.com
+    inventory: Demo Inventory
+    credentials: SNOW
+    project: snow
+    playbook: servicenow_changerequest.yml
+    execution_environment: SNOW_Latest
+
+  - name: RHODA
+    description: Deploy DBAAS Operator
+    job_type: run
+    inventory: Demo Inventory
+    credentials: Advance Cluster Management
+    project: rhoda
+    playbook: rhoda-play.yaml
+    execution_environment: Ansible Engine 2.9 execution environment
+
+
   - name: Demo Job Template
     project: Test Project
     job_type: run
