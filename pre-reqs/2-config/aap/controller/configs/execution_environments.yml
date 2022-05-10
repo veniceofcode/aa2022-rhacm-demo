@@ -3,4 +3,20 @@ controller_execution_environments:
   - name: "My EE"
     image: quay.io/ansible/awx-ee
     pull: always
+
+  - name: "Ansible Engine 2.9 execution environment"
+    image: registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8@sha256:bf63f1fb4be831a794ba7c89972ff47bb10e496a480461787901918077a1f23f
+    pull: always
+  - name: "Control Plane Execution Environment"
+    image: registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8@sha256:02c5dff1518e1bdc4809775f47abbd10d79a5f6d64c0283875a72c019ad78eea
+    pull: always
+  - name: "Default execution environment"
+    image: registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8@sha256:02c5dff1518e1bdc4809775f47abbd10d79a5f6d64c0283875a72c019ad78eea
+    pull: always
+  - name: "Minimal execution environment"
+    image: registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8@sha256:7cd16ac4b22b218a9bd586884fa14f36ce61764ecad9a3c881927fe14578c5e7
+    pull: always
+  - name: "SNOW_Latest"
+    image: registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:1.0.1-54
+    pull: always
 ...
