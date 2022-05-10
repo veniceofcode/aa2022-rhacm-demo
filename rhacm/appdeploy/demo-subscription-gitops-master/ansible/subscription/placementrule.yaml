@@ -1,0 +1,23 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  labels:
+    app: pacman-ansible-demo
+  name: pacman-ansible-demo-placement-0
+  namespace: pacman
+spec:
+  clusterReplicas: 2
+  clusterSelector:
+    matchExpressions:
+    - key: region
+      operator: In
+      values:
+      - us-east-1
+      - europe-west3
+      - centralus
+  #  matchLabels:
+  #    'cloud': 'Google'
+  clusterConditions:
+    - type: ManagedClusterConditionAvailable
+      status: "True"

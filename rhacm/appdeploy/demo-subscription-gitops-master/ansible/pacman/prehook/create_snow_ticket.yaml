@@ -1,0 +1,13 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: service-now-nginx-demo
+  namespace: demo
+spec:
+  tower_auth_secret: testbsu
+  job_template_name: Demo Job Template
+  extra_vars:
+    sn_severity: 3
+    sn_priority: 3
+    appName: pacman-ansible-demonstration
