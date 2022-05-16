@@ -66,65 +66,67 @@ spec:
                   displayName: Ansible Automation Platform
                 status:
                   phase: Succeeded   # check the csv status to determine if operator is running or no
----
-apiVersion: automationcontroller.ansible.com/v1beta1
-kind: AutomationController
-metadata:
-  name: controller
-  namespace: ansible-automation-platform
-  annotations:
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-spec:
-  create_preload_data: true
-  route_tls_termination_mechanism: Edge
-  garbage_collect_secrets: true
-  ingress_type: Route
-  image_pull_policy: IfNotPresent
-  task_privileged: false
-  projects_persistence: false
-  replicas: 1
-  admin_user: admin
----
-apiVersion: automationhub.ansible.com/v1beta1
-kind: AutomationHub
-metadata:
-  name: automation-hub
-  namespace: ansible-automation-platform
-spec:
-  route_tls_termination_mechanism: Edge
-  ingress_type: Route
-  loadbalancer_port: 80
-  file_storage_size: 100Gi
-  image_pull_policy: IfNotPresent
-  web:
-    replicas: 1
-  file_storage_access_mode: ReadWriteOnce
-  content:
-    log_level: INFO
-    replicas: 2
-  postgres_storage_requirements:
-    limits:
-      storage: 50Gi
-    requests:
-      storage: 8Gi
-  api:
-    log_level: INFO
-    replicas: 1
-  postgres_resource_requirements:
-    limits:
-      cpu: 1000m
-      memory: 8Gi
-    requests:
-      cpu: 500m
-      memory: 2Gi
-  loadbalancer_protocol: http
-  resource_manager:
-    replicas: 1
-  storage_type: File
-  worker:
-    replicas: 2
----
 
+    - objectDefinition:
+        apiVersion: automationcontroller.ansible.com/v1beta1
+        kind: AutomationController
+        metadata:
+          name: controller
+          namespace: ansible-automation-platform
+          annotations:
+            argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+        spec:
+          create_preload_data: true
+          route_tls_termination_mechanism: Edge
+          garbage_collect_secrets: true
+          ingress_type: Route
+          image_pull_policy: IfNotPresent
+          task_privileged: false
+          projects_persistence: false
+          replicas: 1
+          admin_user: admin
+
+    - objectDefinition:
+        apiVersion: automationhub.ansible.com/v1beta1
+        kind: AutomationHub
+        metadata:
+          name: automation-hub
+          namespace: ansible-automation-platform
+        spec:
+          route_tls_termination_mechanism: Edge
+          ingress_type: Route
+          loadbalancer_port: 80
+          file_storage_size: 100Gi
+          image_pull_policy: IfNotPresent
+          web:
+            replicas: 1
+          file_storage_access_mode: ReadWriteOnce
+          content:
+            log_level: INFO
+            replicas: 2
+          postgres_storage_requirements:
+            limits:
+              storage: 50Gi
+            requests:
+              storage: 8Gi
+          api:
+            log_level: INFO
+            replicas: 1
+          postgres_resource_requirements:
+            limits:
+              cpu: 1000m
+              memory: 8Gi
+            requests:
+              cpu: 500m
+              memory: 2Gi
+          loadbalancer_protocol: http
+          resource_manager:
+            replicas: 1
+          storage_type: File
+          worker:
+            replicas: 2
+
+---
 apiVersion: policy.open-cluster-management.io/v1beta1
 kind: PolicySet
 metadata:

@@ -1,0 +1,10 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: aa2022-rhacm
+  namespace: policies
+spec:
+  disabled: false
+  remediationAction: enforce
+
