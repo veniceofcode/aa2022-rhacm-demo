@@ -17,7 +17,7 @@ spec:
         metadata:
           name: policy-configure-subscription-admin-hub
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           object-templates:
             - complianceType: musthave

@@ -79,6 +79,8 @@ spec:
     - policy-configure-subscription-admin-hub
     - automation-hub
     - controller
+    - multiclusterhub
+    - managed-serviceaccount
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
