@@ -4,6 +4,7 @@ metadata:
   name: multiclusterhub
   namespace: open-cluster-management
 spec:
+  installNamespace: open-cluster-management
   availabilityConfig: High
   enableClusterBackup: false
   imagePullSecret: multiclusterhub-operator-pull-secret

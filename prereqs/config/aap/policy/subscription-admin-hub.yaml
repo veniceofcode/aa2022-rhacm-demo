@@ -77,7 +77,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-policy-configure-subscription-admin-hub
-  namespace: default
+  namespace: policies
 spec:
   clusterConditions:
     - status: "True"
@@ -97,7 +97,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-configure-subscription-admin-hub
-  namespace: default
+  namespace: policies
 placementRef:
   name: placement-policy-configure-subscription-admin-hub
   apiGroup: apps.open-cluster-management.io
