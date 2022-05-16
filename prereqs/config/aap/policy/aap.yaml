@@ -71,6 +71,7 @@ spec:
                   projects_persistence: false
                   replicas: 1
                   admin_user: admin
+            - complianceType: musthave
               objectDefinition:
                 apiVersion: automationhub.ansible.com/v1beta1
                 kind: AutomationHub
