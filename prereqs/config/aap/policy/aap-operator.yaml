@@ -77,10 +77,8 @@ spec:
   policies:
     - policy-ansible-automation-operator
     - policy-configure-subscription-admin-hub
-    - automation-hub
-    - controller
-    - multiclusterhub
-    - managed-serviceaccount
+    - policy-configure-multiclusterhub
+
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
