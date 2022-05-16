@@ -53,7 +53,7 @@ spec:
         metadata:
           name: ansible-automation-platform-status
         spec:
-          remediationAction: inform 
+          remediationAction: inform
           severity: high
           object-templates:
             - complianceType: musthave
@@ -136,6 +136,7 @@ spec:
   description: aa2022-rhacm
   policies:
     - policy-ansible-automation-operator
+    - policy-configure-subscription-admin-hub
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
