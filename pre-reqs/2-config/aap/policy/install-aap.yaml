@@ -87,7 +87,7 @@ placementRef:
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-  - name: policy-ansible-automation-operator
+  - name: aa2022-rhacm
     kind: PolicySet
     apiGroup: policy.open-cluster-management.io
 ---
