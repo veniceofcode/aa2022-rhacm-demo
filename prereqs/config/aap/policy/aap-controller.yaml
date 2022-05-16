@@ -2,18 +2,16 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
   name: policy-configure-aap-controller
-  namespace: policies
 spec:
+  remediationAction: enforce
   disabled: false
   policy-templates:
     - objectDefinition:
         apiVersion: automationcontroller.ansible.com/v1beta1
         kind: AutomationController
         metadata:
-          name: controller
+          name: aap-controller
           namespace: ansible-automation-platform
-          annotations:
-            argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
         spec:
           create_preload_data: true
           route_tls_termination_mechanism: Edge
@@ -24,39 +22,6 @@ spec:
           projects_persistence: false
           replicas: 1
           admin_user: admin
-
-          remediationAction: inform
-          severity: low
-  remediationAction: enforce
-status:
-  compliant: Compliant
-  placement:
-    - placementBinding: binding-policy-configure-aap-controller
-      placementRule: placement-policy-configure-aap-controller
-  status:
-    - clustername: local-cluster
-      clusternamespace: local-cluster
-      compliant: Compliant
----
-apiVersion: apps.open-cluster-management.io/v1
-kind: PlacementRule
-metadata:
-  name: placement-policy-configure-configure-aap-controller
-  namespace: policies
-spec:
-  clusterConditions:
-    - status: "True"
-      type: ManagedClusterConditionAvailable
-  clusterSelector:
-    matchExpressions:
-      - key: name
-        operator: In
-        values:
-          - local-cluster
-status:
-  decisions:
-    - clusterName: local-cluster
-      clusterNamespace: local-cluster
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
@@ -71,3 +36,20 @@ subjects:
   - name: policy-configure-aap-controller
     apiGroup: policy.open-cluster-management.io
     kind: Policy
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-policy-configure-aap-controller
+  namespace: policies
+spec:
+  clusterConditions:
+    - status: "True"
+      type: ManagedClusterConditionAvailable
+  clusterSelector:
+    matchExpressions:
+      - key: name
+        operator: In
+        values:
+          - local-cluster
