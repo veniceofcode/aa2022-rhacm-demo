@@ -1,0 +1,407 @@
+   _    _    ____  ______   __   ____ ___  ____ ___ _   _  ____   _ _ _
+| | | |  / \  |  _ \|  _ \ \ / /  / ___/ _ \|  _ \_ _| \ | |/ ___| | | | |
+| |_| | / _ \ | |_) | |_) \ V /  | |  | | | | | | | ||  \| | |  _  | | | |
+|  _  |/ ___ \|  __/|  __/ | |   | |__| |_| | |_| | || |\  | |_| | |_|_|_|
+|_| |_/_/   \_\_|   |_|    |_|    \____\___/|____/___|_| \_|\____| (_|_|_)
+
+Weather report: London
+
+      \   /     Sunny
+       .-.      18 °C
+    ― (   ) ―   ↗ 22 km/h
+       `-’      10 km
+      /   \     0.0 mm
+                                                       ┌─────────────┐
+┌──────────────────────────────┬───────────────────────┤  Mon 16 May ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│               Overcast       │               Overcast       │  _`/"".-.     Patchy rain po…│     \   /     Clear          │
+│      .--.     17 °C          │      .--.     21 °C          │   ,\_(   ).   19 °C          │      .-.      +15(14) °C     │
+│   .-(    ).   ↗ 18-22 km/h   │   .-(    ).   ↗ 22-25 km/h   │    /(___(__)  ↗ 17-21 km/h   │   ― (   ) ―   ↑ 12-18 km/h   │
+│  (___.__)__)  10 km          │  (___.__)__)  10 km          │      ‘ ‘ ‘ ‘  10 km          │      `-’      10 km          │
+│               0.0 mm | 0%    │               0.0 mm | 0%    │     ‘ ‘ ‘ ‘   0.2 mm | 89%   │     /   \     0.0 mm | 0%    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐
+┌──────────────────────────────┬───────────────────────┤  Tue 17 May ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│     \   /     Sunny          │     \   /     Sunny          │    \  /       Partly cloudy  │  _`/"".-.     Patchy rain po…│
+│      .-.      19 °C          │      .-.      +23(25) °C     │  _ /"".-.     21 °C          │   ,\_(   ).   16 °C          │
+│   ― (   ) ―   ↗ 8-9 km/h     │   ― (   ) ―   ↑ 10-12 km/h   │    \_(   ).   ↖ 15-19 km/h   │    /(___(__)  ↑ 13-21 km/h   │
+│      `-’      10 km          │      `-’      10 km          │    /(___(__)  10 km          │      ‘ ‘ ‘ ‘  9 km           │
+│     /   \     0.0 mm | 0%    │     /   \     0.0 mm | 0%    │               0.0 mm | 0%    │     ‘ ‘ ‘ ‘   2.3 mm | 73%   │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐
+┌──────────────────────────────┬───────────────────────┤  Wed 18 May ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│     \   /     Sunny          │               Overcast       │               Cloudy         │  _`/"".-.     Patchy rain po…│
+│      .-.      18 °C          │      .--.     21 °C          │      .--.     19 °C          │   ,\_(   ).   17 °C          │
+│   ― (   ) ―   ↗ 13-14 km/h   │   .-(    ).   ↑ 14-16 km/h   │   .-(    ).   ↑ 10-13 km/h   │    /(___(__)  ↖ 4-7 km/h     │
+│      `-’      10 km          │  (___.__)__)  10 km          │  (___.__)__)  10 km          │      ‘ ‘ ‘ ‘  10 km          │
+│     /   \     0.0 mm | 0%    │               0.0 mm | 0%    │               0.0 mm | 0%    │     ‘ ‘ ‘ ‘   0.1 mm | 74%   │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+Location: London [51.509648,-0.099076]
+
+Follow @igor_chubin for wttr.in updates
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc login --token=sha256~SDGudMW5aHfScKQc5iPT-5dFl9jt1G35M_FdiiEy2DQ --server=https://api.cluster-gjhdv.gjhdv.sandbox512.opentlc.com:6443
+The server uses a certificate signed by an unknown authority.
+You can bypass the certificate check, but any data you send to the server could be intercepted by others.
+Use insecure connections? (y/n): y
+
+Logged into "https://api.cluster-gjhdv.gjhdv.sandbox512.opentlc.com:6443" as "opentlc-mgr" using the token provided.
+
+You have access to 63 projects, the list has been suppressed. You can list all projects with 'oc projects'
+
+Using project "default".
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ git pull
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 8 (delta 4), reused 8 (delta 4), pack-reused 0
+Unpacking objects: 100% (8/8), 9.07 KiB | 1.13 MiB/s, done.
+From https://github.com/stolostron/deploy
+   aa47ace..3076444  master     -> origin/master
+Updating aa47ace..3076444
+Fast-forward
+ mirror/2.3.11-DOWNSTREAM-2022-05-16-08-55-54.txt | 68 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ mirror/2.4.5-DOWNSTREAM-2022-05-13-18-14-30.txt  | 80 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 148 insertions(+)
+ create mode 100644 mirror/2.3.11-DOWNSTREAM-2022-05-16-08-55-54.txt
+ create mode 100644 mirror/2.4.5-DOWNSTREAM-2022-05-13-18-14-30.txt
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ $ oc apply -f  ~/deploy/addons/downstream/image-content-source-policy.yaml
+bash: $: command not found
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc apply -f  ~/deploy/addons/downstream/image-content-source-policy.yaml
+imagecontentsourcepolicy.operator.openshift.io/rhacm-repo created
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc get secret/pull-secret -n openshift-config -o json | jq '.data.".dockerconfigjson"' | tr -d '"' | base64 -d > ~/cluster-pull-secret.json
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ export PRERELEASE_PULL=$(grep -o '.dockerconfigjson:.*' ~/deploy/prereqs/pull-secret.yaml | cut -f2- -d: | sed 's/^[ \t]*//;s/[ \t]*$//')
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ echo $PRERELEASE_PULL | base64 -d | sed "s/quay\.io/quay\.io:443/g" | tail -n +3 | head -n -2 > ~/prerelease-secret.json
+head: illegal line count -- -2
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ echo $PRERELEASE_PULL | base64 -d | sed "s/quay\.io/quay\.io:443/g" | tail -n +3 | tail -r | tail -n +2 | tail -r > ~/prerelease-secret.json
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ cat ~/cluster-pull-secret.json | jq ".auths += {`cat ~/prerelease-secret.json`}" > ~/merged-pull-secret.json
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc patch secret/pull-secret -n openshift-config --type merge --patch '{"data":{".dockerconfigjson":"'$(cat ~/merged-pull-secret.json | tr -d '[:space:]' | base64 -w 0)'"}}'
+base64: invalid option -- w
+Usage:  base64 [-hvDd] [-b num] [-i in_file] [-o out_file]
+  -h, --help     display this message
+  -Dd, --decode   decodes input
+  -b, --break    break encoded string into num character lines
+  -i, --input    input file (default: "-" for stdin)
+  -o, --output   output file (default: "-" for stdout)
+The Secret "pull-secret" is invalid: data[.dockerconfigjson]: Invalid value: "<secret contents redacted>": unexpected end of JSON input
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc patch secret/pull-secret -n openshift-config --type merge --patch '{"data":{".dockerconfigjson":"'$(cat ~/merged-pull-secret.json | tr -d '[:space:]' | base64)'"}}'
+secret/pull-secret patched
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc patch secret/pull-secret -n openshift-config --type merge --patch '{"data":{".dockerconfigjson":"'$(cat ~/merged-pull-secret.json | tr -d '[:space:]' | base64 -w 0)'"}}'
+base64: invalid option -- w
+Usage:  base64 [-hvDd] [-b num] [-i in_file] [-o out_file]
+  -h, --help     display this message
+  -Dd, --decode   decodes input
+  -b, --break    break encoded string into num character lines
+  -i, --input    input file (default: "-" for stdin)
+  -o, --output   output file (default: "-" for stdout)
+The Secret "pull-secret" is invalid: data[.dockerconfigjson]: Invalid value: "<secret contents redacted>": unexpected end of JSON input
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc patch secret/pull-secret -n openshift-config --type merge --patch '{"data":{".dockerconfigjson":"'$(cat ~/merged-pull-secret.json | tr -d '[:space:]' | base64)'"}}'
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ oc get secret/pull-secret -n openshift-config -o json | jq '.data.".dockerconfigjson"' | tr -d '"' | base64 -d | python3 -m json.tool
+
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ export DEBUG=true
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ export COMPOSITE_BUNDLE=true
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ export CUSTOM_REGISTRY_REPO="quay.io:443/acm-d"
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ export DOCKER_CONFIG=`cat ~/deploy/prereqs/pull-secret.yaml |grep dockerconfigjson:|cut -d: -f2|tr -d '[:space:]'`
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ export QUAY_TOKEN=$(echo $DOCKER_CONFIG | base64 -d | sed "s/quay\.io/quay\.io:443/g" | base64)
+raghurambanda@MacBook-Pro:~/Desktop/aa2022/deploy$ ./start.sh --watch
+* Testing connection
+* Using baseDomain: cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+* oc CLI Client Version: 4.9.0-202109302317.p0.git.96e95ce.assembly.stream-96e95ce
+Find snapshot tags @ https://quay.io/repository/stolostron/acm-custom-registry?tab=tags
+Enter SNAPSHOT TAG: (Press ENTER for default: 2.5.0-DOWNSTREAM-2022-05-13-16-47-16)
+
+* Applying multicluster-hub-cr values
+catalogsource.operators.coreos.com/acm-custom-registry created
+
+#####
+Wait for acm-custom-registry to reach running state (4min).
+* STATUS: acm-custom-registry-mw9kb              0/1     ContainerCreating   0          0s
+* STATUS: acm-custom-registry-mw9kb              0/1     ContainerCreating   0          3s
+* STATUS: acm-custom-registry-mw9kb              0/1     Running   0          7s
+* STATUS: acm-custom-registry-mw9kb              0/1     Running   0          11s
+* STATUS: acm-custom-registry-mw9kb              0/1     Running   0          14s
+* STATUS: acm-custom-registry-mw9kb              0/1     Running   0          18s
+* acm-custom-registry is running
+catalogsource.operators.coreos.com/multiclusterengine-catalog created
+
+#####
+Wait for multiclusterengine-catalog to reach running state (4min).
+* STATUS: multiclusterengine-catalog-btd8n       0/1     Terminating         0          0s
+multiclusterengine-catalog-xmjvq       0/1     ContainerCreating   0          0s
+* STATUS: multiclusterengine-catalog-xmjvq       0/1     ContainerCreating   0          4s
+* STATUS: multiclusterengine-catalog-xmjvq       0/1     Running   0          7s
+* multiclusterengine-catalog is running
+* Downstream: false   Release Version: 2.5.0
+* Composite Bundle: true   Image Registry (CUSTOM_REGISTRY_REPO): quay.io:443/acm-d
+* Using: 2.5.0-DOWNSTREAM-2022-05-13-16-47-16
+
+* Applying SNAPSHOT to multiclusterhub-operator subscription
+* Applying CUSTOM_REGISTRY_REPO to multiclusterhub-operator subscription
+* Applying SUBSCRIPTION_CHANNEL to multiclusterhub-operator subscription
+* Applying MODE to multiclusterhub-operator subscription
+* Applying STARTING_CSV to multiclusterhub-operator-subscription (advanced-cluster-management.v2.5.0)
+
+##### Creating the open-cluster-management namespace
+namespace/open-cluster-management created
+
+##### Applying prerequisites
+Warning: resource serviceaccounts/default is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+serviceaccount/default configured
+secret/multiclusterhub-operator-pull-secret created
+Warning: resource serviceaccounts/default is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+serviceaccount/default configured
+secret/multiclusterhub-operator-pull-secret created
+
+##### Patching secret with QUAY_TOKEN
+secret/multiclusterhub-operator-pull-secret patched
+
+##### Allow secrets time to propagate #####
+
+##### Applying acm-operator subscription #####
+operatorgroup.operators.coreos.com/default created
+subscription.operators.coreos.com/acm-operator-subscription created
+
+#####
+Wait for multiclusterhub-operator to reach running state (4min).
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+No resources found in open-cluster-management namespace.
+* STATUS: Waiting
+* STATUS: multiclusterhub-operator-6c7b5dd69c-657kd                         0/1     ContainerCreating   0          3s
+* STATUS: multiclusterhub-operator-6c7b5dd69c-657kd                         0/1     ContainerCreating   0          7s
+* STATUS: multiclusterhub-operator-6c7b5dd69c-657kd                         0/1     Running             0          10s
+* STATUS: multiclusterhub-operator-6c7b5dd69c-657kd                         0/1     Running             0          14s
+* STATUS: multiclusterhub-operator-6c7b5dd69c-657kd                         0/1     Running             0          18s
+* multiclusterhub-operator is running
+
+* Beginning deploy...
+* Applying the multiclusterhub-operator to install Red Hat Advanced Cluster Management for Kubernetes
+multiclusterhub.operator.open-cluster-management.io/multiclusterhub created
+
+#####
+Wait for multicluster-operators-application to reach running state (4min).
+* STATUS: multicluster-operators-application-7c48f587b6-ksqw2               1/3     Running   0          32s
+* STATUS: multicluster-operators-application-7c48f587b6-ksqw2               1/3     Running   0          36s
+* STATUS: multicluster-operators-application-7c48f587b6-ksqw2               1/3     Running   0          40s
+* STATUS: multicluster-operators-application-7c48f587b6-ksqw2               1/3     Running   0          44s
+* multicluster-operators-application is running
+
+#####
+Waited 0/1500 seconds for MCH to reach Ready Status.  Current Status: null
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+jq: error (at <stdin>:1): null (null) has no keys
+
+Waited 30/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           Unknown         Unknown                         No conditions available
+console-chart-sub               Unknown         Unknown                         No conditions available
+grc-sub                         Unknown         Unknown                         No conditions available
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          Unknown         Unknown                         No conditions available
+multicluster-engine             Unknown         Unknown                         No conditions available
+multicluster-engine-csv         Unknown         Unknown                         No conditions available
+multicluster-engine-sub         Unknown         Unknown                         No conditions available
+multiclusterhub-repo            Unknown         Unknown                         No conditions available
+policyreport-sub                Unknown         Unknown                         No conditions available
+search-prod-sub                 Unknown         Unknown                         No conditions available
+volsync-addon-controller-sub    Unknown         Unknown                         No conditions available
+
+Waited 60/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           Unknown         Unknown                         No conditions available
+console-chart-sub               Unknown         Unknown                         No conditions available
+grc-sub                         Unknown         Unknown                         No conditions available
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          Unknown         Unknown                         No conditions available
+multicluster-engine             Unknown         Unknown                         No conditions available
+multicluster-engine-csv         Unknown         Unknown                         No conditions available
+multicluster-engine-sub         Unknown         Unknown                         No conditions available
+multiclusterhub-repo            Unknown         Unknown                         No conditions available
+policyreport-sub                Unknown         Unknown                         No conditions available
+search-prod-sub                 Unknown         Unknown                         No conditions available
+volsync-addon-controller-sub    Unknown         Unknown                         No conditions available
+
+Waited 90/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           Unknown         Unknown                         No conditions available
+console-chart-sub               Unknown         Unknown                         No conditions available
+grc-sub                         Unknown         Unknown                         No conditions available
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          Unknown         Unknown                         No conditions available
+multicluster-engine             Unknown         Unknown                         No conditions available
+multicluster-engine-csv         Unknown         Unknown                         No conditions available
+multicluster-engine-sub         Unknown         Unknown                         No conditions available
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                Unknown         Unknown                         No conditions available
+search-prod-sub                 Unknown         Unknown                         No conditions available
+volsync-addon-controller-sub    Unknown         Unknown                         No conditions available
+
+Waited 120/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           Unknown         Unknown                         No conditions available
+console-chart-sub               Unknown         Unknown                         No conditions available
+grc-sub                         Unknown         Unknown                         No conditions available
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          Unknown         Unknown                         No conditions available
+multicluster-engine             Unknown         Unknown                         No conditions available
+multicluster-engine-csv         False           Unavailable                     InstallWaiting
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                Unknown         Unknown                         No conditions available
+search-prod-sub                 Unknown         Unknown                         No conditions available
+volsync-addon-controller-sub    Unknown         Unknown                         No conditions available
+
+Waited 150/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           Unknown         Unknown                         No conditions available
+console-chart-sub               Unknown         Unknown                         No conditions available
+grc-sub                         Unknown         Unknown                         No conditions available
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          Unknown         Unknown                         No conditions available
+multicluster-engine             True            Progressing                     ComponentsDeployed
+multicluster-engine-csv         True            Available                       InstallSucceeded
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                Unknown         Unknown                         No conditions available
+search-prod-sub                 Unknown         Unknown                         No conditions available
+volsync-addon-controller-sub    Unknown         Unknown                         No conditions available
+
+Waited 180/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           Unknown         Unknown                         No conditions available
+console-chart-sub               Unknown         Unknown                         No conditions available
+grc-sub                         Unknown         Unknown                         No conditions available
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          Unknown         Unknown                         No conditions available
+multicluster-engine             True            Progressing                     ComponentsDeployed
+multicluster-engine-csv         True            Available                       InstallSucceeded
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                Unknown         Unknown                         No conditions available
+search-prod-sub                 Unknown         Unknown                         No conditions available
+volsync-addon-controller-sub    Unknown         Unknown                         No conditions available
+
+Waited 210/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+Detected ACM Console URL: https://multicloud-console.apps.cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           True            ReleaseFailed                   InstallError
+console-chart-sub               True            ReleaseFailed                   InstallError
+grc-sub                         True            ReleaseFailed                   InstallError
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          False           Available                       MinimumReplicasUnavailable
+multicluster-engine             True            Available                       ComponentsAvailable
+multicluster-engine-csv         True            Available                       InstallSucceeded
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                True            ReleaseFailed                   InstallError
+search-prod-sub                 False           Available                       MinimumReplicasUnavailable
+volsync-addon-controller-sub    False           Available                       MinimumReplicasUnavailable
+
+Waited 240/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+Detected ACM Console URL: https://multicloud-console.apps.cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           True            ReleaseFailed                   InstallError
+console-chart-sub               True            ReleaseFailed                   InstallError
+grc-sub                         True            ReleaseFailed                   InstallError
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          True            Progressing                     ReplicaSetUpdated
+multicluster-engine             True            Available                       ComponentsAvailable
+multicluster-engine-csv         True            Available                       InstallSucceeded
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                True            ReleaseFailed                   InstallError
+search-prod-sub                 False           Available                       MinimumReplicasUnavailable
+volsync-addon-controller-sub    True            Deployed                        InstallSuccessful
+
+Waited 270/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+Detected ACM Console URL: https://multicloud-console.apps.cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           True            Deployed                        InstallSuccessful
+console-chart-sub               True            Deployed                        InstallSuccessful
+grc-sub                         False           Available                       MinimumReplicasUnavailable
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          True            Deployed                        InstallSuccessful
+multicluster-engine             True            Available                       ComponentsAvailable
+multicluster-engine-csv         True            Available                       InstallSucceeded
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                False           Available                       MinimumReplicasUnavailable
+search-prod-sub                 True            Deployed                        InstallSuccessful
+volsync-addon-controller-sub    True            Deployed                        InstallSuccessful
+
+Waited 300/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+Detected ACM Console URL: https://multicloud-console.apps.cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           True            Deployed                        InstallSuccessful
+console-chart-sub               True            Deployed                        InstallSuccessful
+grc-sub                         True            Deployed                        InstallSuccessful
+local-cluster                   Unknown         Unknown                         No conditions available
+management-ingress-sub          True            Deployed                        InstallSuccessful
+multicluster-engine             True            Available                       ComponentsAvailable
+multicluster-engine-csv         True            Available                       InstallSucceeded
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                False           Available                       MinimumReplicasUnavailable
+search-prod-sub                 True            Deployed                        InstallSuccessful
+volsync-addon-controller-sub    True            Deployed                        InstallSuccessful
+
+Waited 330/1500 seconds for MCH to reach Ready Status.  Current Status: Installing
+Detected ACM Console URL: https://multicloud-console.apps.cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+#####
+COMPONENT                       STATUS          TYPE                            REASON
+cluster-lifecycle-sub           True            Deployed                        InstallSuccessful
+console-chart-sub               True            Deployed                        InstallSuccessful
+grc-sub                         True            Deployed                        InstallSuccessful
+local-cluster                   True            ManagedClusterImportSucceeded   ManagedClusterImported
+management-ingress-sub          True            Deployed                        InstallSuccessful
+multicluster-engine             True            Available                       ComponentsAvailable
+multicluster-engine-csv         True            Available                       InstallSucceeded
+multicluster-engine-sub         True            Available                       AtLatestKnown
+multiclusterhub-repo            True            Available                       MinimumReplicasAvailable
+policyreport-sub                True            Deployed                        InstallSuccessful
+search-prod-sub                 True            Deployed                        InstallSuccessful
+volsync-addon-controller-sub    True            Deployed                        InstallSuccessful
+
+MCH reached Running status after 360 seconds.
+Detected ACM Console URL: https://multicloud-console.apps.cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+
+deployment.apps/search-operator updated
+Search enabled
+
+#####
+* Red Hat ACM URL: https://multicloud-console.apps.cluster-gjhdv.gjhdv.sandbox512.opentlc.com
+#####
+Done!
