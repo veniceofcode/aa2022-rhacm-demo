@@ -2,12 +2,11 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: aa2022-rhacm-placement
+  labels:
+    app: aa2022-rhacm
+  name: aa2022-rhacm-placement-1
   namespace: policies
 spec:
   clusterSelector:
-    matchExpressions:
-      - key: name
-        operator: In
-        values:
-          - local-cluster
+    matchLabels:
+      'local-cluster': 'true'

@@ -1,10 +1,19 @@
 ---
-apiVersion: policy.open-cluster-management.io/v1
-kind: Policy
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
 metadata:
-  name: aa2022-rhacm
+  annotations:
+    apps.open-cluster-management.io/git-branch: main
+    apps.open-cluster-management.io/git-path: pre-reqs/config/aap/policy
+    apps.open-cluster-management.io/reconcile-option: merge
+  labels:
+    app: aa2022-rhacm
+  name: aa2022-rhacm-subscription-1
   namespace: policies
 spec:
-  disabled: false
-  remediationAction: enforce
+  channel: ggithubcom-veniceofcode-aa2022-rhacm-demo-ns/ggithubcom-veniceofcode-aa2022-rhacm-demo
+  placement:
+    placementRef:
+      kind: PlacementRule
+      name: aa2022-rhacm-placement-1
 
