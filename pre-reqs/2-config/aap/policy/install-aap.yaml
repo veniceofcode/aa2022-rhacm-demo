@@ -65,7 +65,18 @@ spec:
                 spec:
                   displayName: Ansible Automation Platform
                 status:
-                  phase: Succeeded   # check the csv status to determine if operator is running or not
+                  phase: Succeeded   # check the csv status to determine if operator is running or no
+
+---
+apiVersion: policy.open-cluster-management.io/v1beta1
+kind: PolicySet
+metadata:
+  name: aa2022-rhacm
+  namespace: policies
+spec:
+  description: aa2022-rhacm
+  policies:
+    - policy-ansible-automation-operator
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
@@ -77,7 +88,7 @@ placementRef:
   apiGroup: apps.open-cluster-management.io
 subjects:
   - name: policy-ansible-automation-operator
-    kind: Policy
+    kind: PolicySet
     apiGroup: policy.open-cluster-management.io
 ---
 apiVersion: apps.open-cluster-management.io/v1
