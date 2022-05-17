@@ -80,6 +80,7 @@ spec:
     - policy-configure-multiclusterhub
     - policy-configure-aapcontroller
     - policy-configure-automationhub
+    - policy-configure-managed-serviceaccount
 
 ---
 apiVersion: policy.open-cluster-management.io/v1
