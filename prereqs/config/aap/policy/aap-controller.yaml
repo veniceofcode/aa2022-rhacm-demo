@@ -2,41 +2,48 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
   name: policy-configure-aapcontroller
+  namespace: policies
 spec:
-  remediationAction: enforce
   disabled: false
   policy-templates:
     - objectDefinition:
-        apiVersion: automationcontroller.ansible.com/v1beta1
-        kind: AutomationController
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
         metadata:
-          name: aapcontroller
-          namespace: ansible-automation-platform
+          name: policy-configure-aapcontroller
         spec:
-          create_preload_data: true
-          route_tls_termination_mechanism: Edge
-          garbage_collect_secrets: true
-          ingress_type: Route
-          image_pull_policy: IfNotPresent
-          task_privileged: false
-          projects_persistence: false
-          replicas: 1
-          admin_user: admin
----
-apiVersion: policy.open-cluster-management.io/v1
-kind: PlacementBinding
-metadata:
-  name: binding-policy-configure-aapcontroller
-  namespace: policies
-placementRef:
-  name: placement-policy-configure-aapcontroller
-  apiGroup: apps.open-cluster-management.io
-  kind: PlacementRule
-subjects:
-  - name: policy-configure-aap-controller
-    apiGroup: policy.open-cluster-management.io
-    kind: Policy
-
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: automationcontroller.ansible.com/v1beta1
+                kind: AutomationController
+                metadata:
+                  name: aapcontroller
+                  namespace: ansible-automation-platform
+                  annotations:
+                    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+                spec:
+                  create_preload_data: true
+                  route_tls_termination_mechanism: Edge
+                  garbage_collect_secrets: true
+                  ingress_type: Route
+                  image_pull_policy: IfNotPresent
+                  task_privileged: false
+                  projects_persistence: false
+                  replicas: 1
+                  admin_user: admin
+          remediationAction: inform
+          severity: low
+  remediationAction: enforce
+status:
+  compliant: Compliant
+  placement:
+    - placementBinding: binding-policy-configure-aapcontroller
+      placementRule: placement-policy-configure-aapcontroller
+  status:
+    - clustername: local-cluster
+      clusternamespace: local-cluster
+      compliant: Compliant
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
@@ -53,3 +60,21 @@ spec:
         operator: In
         values:
           - local-cluster
+status:
+  decisions:
+    - clusterName: local-cluster
+      clusterNamespace: local-cluster
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-configure-aapcontroller
+  namespace: policies
+placementRef:
+  name: placement-policy-configure-aapcontroller
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+subjects:
+  - name: policy-configure-aapcontroller
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
