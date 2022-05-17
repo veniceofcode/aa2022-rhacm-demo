@@ -1,7 +1,7 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-configure-aap-controller
+  name: policy-configure-aapcontroller
 spec:
   remediationAction: enforce
   disabled: false
@@ -10,7 +10,7 @@ spec:
         apiVersion: automationcontroller.ansible.com/v1beta1
         kind: AutomationController
         metadata:
-          name: aap-controller
+          name: aapcontroller
           namespace: ansible-automation-platform
         spec:
           create_preload_data: true
@@ -26,10 +26,10 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-configure-aap-controller
+  name: binding-policy-configure-aapcontroller
   namespace: policies
 placementRef:
-  name: placement-policy-configure-aap-controller
+  name: placement-policy-configure-aapcontroller
   apiGroup: apps.open-cluster-management.io
   kind: PlacementRule
 subjects:
@@ -41,7 +41,7 @@ subjects:
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-configure-aap-controller
+  name: placement-policy-configure-aapcontroller
   namespace: policies
 spec:
   clusterConditions:

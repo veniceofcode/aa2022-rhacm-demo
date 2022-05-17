@@ -78,7 +78,8 @@ spec:
     - policy-ansible-automation-operator
     - policy-configure-subscription-admin-hub
     - policy-configure-multiclusterhub
-    - policy-configure-aap-controller
+    - policy-configure-aapcontroller
+    - policy-configure-automationhub
 
 ---
 apiVersion: policy.open-cluster-management.io/v1
