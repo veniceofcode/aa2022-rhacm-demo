@@ -1,0 +1,38 @@
+apiVersion: policy.open-cluster-management.io/v1beta1
+kind: PolicySet
+metadata:
+  name: aa2022-managed-clusters
+  namespace: policies
+spec:
+  description: aa2022-managed-clusters
+  policies:
+    - policy-configure-managed-serviceaccount
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-configure-managed-serviceaccount
+placementRef:
+  name: placement-policy-configure-managed-serviceaccount
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+  - name: aa2022-managed-clusters
+    kind: PolicySet
+    apiGroup: policy.open-cluster-management.io
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-policy-configure-managed-serviceaccount
+spec:
+  clusterConditions:
+    - status: 'True'
+      type: ManagedClusterConditionAvailable
+  clusterSelector:
+    matchExpressions:
+      - key: name
+        operator: In
+        values:
+          - raghu-kind
