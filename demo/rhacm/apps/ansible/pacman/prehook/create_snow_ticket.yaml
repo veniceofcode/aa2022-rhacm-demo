@@ -2,12 +2,11 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
-  name: service-now-nginx-demo
-  namespace: demo
+  name: snow
+  namespace: pacman
 spec:
-  tower_auth_secret: testbsu
-  job_template_name: Demo Job Template
+  job_template_name: snow
   extra_vars:
     sn_severity: 3
     sn_priority: 3
-    appName: pacman-ansible-demonstration
+    appName: pacman
