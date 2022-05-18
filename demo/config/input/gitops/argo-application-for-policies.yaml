@@ -1,0 +1,169 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argopolicies
+  namespace: policies2
+spec:
+  applicationSet:
+    resources:
+      limits:
+        cpu: "2"
+        memory: 1Gi
+      requests:
+        cpu: 250m
+        memory: 512Mi
+  controller:
+    processors: {}
+    resources:
+      limits:
+        cpu: "2"
+        memory: 2Gi
+      requests:
+        cpu: 250m
+        memory: 1Gi
+    sharding: {}
+  dex:
+    openShiftOAuth: true
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 128Mi
+  grafana:
+    enabled: false
+    ingress:
+      enabled: false
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 128Mi
+    route:
+      enabled: false
+  ha:
+    enabled: false
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 128Mi
+  initialSSHKnownHosts: {}
+  prometheus:
+    enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: false
+  rbac:
+    policy: |
+      g, system:cluster-admins, role:admin
+      g, cluster-admins, role:admin
+    scopes: '[groups]'
+  redis:
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 128Mi
+  repo:
+    resources:
+      limits:
+        cpu: "1"
+        memory: 1Gi
+      requests:
+        cpu: 250m
+        memory: 256Mi
+  resourceExclusions: |
+    - apiGroups:
+      - tekton.dev
+      clusters:
+      - '*'
+      kinds:
+      - TaskRun
+      - PipelineRun
+  server:
+    autoscale:
+      enabled: false
+    grpc:
+      ingress:
+        enabled: false
+    ingress:
+      enabled: false
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 125m
+        memory: 128Mi
+    route:
+      enabled: true
+    service:
+      type: ""
+  tls:
+    ca: {}
+
+---
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: policiesapp
+  namespace: policies2
+spec:
+  project: policiesproject
+  source:
+    repoURL: https://github.com/ch-stark/install-aap.git
+    targetRevision: main
+    path: generated-policies
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: policies
+
+---    
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: policiesproject
+  namespace: policies2
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Project to deploy policies
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - '*'
+  # Only permit applications to deploy to the policies namespace in the same cluster
+  destinations:
+  - namespace: policies
+    server: https://kubernetes.default.svc
+  # Deny all cluster-scoped resources from being created, except for Namespace
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Polices
+  - group: ''
+    kind: Placement
+  roles:
+  # A role which provides read-only access to all applications in the project
+  - name: policyadmin
+    groups:
+    - admins
+
+---
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: ManagedClusterSetBinding
+metadata:
+  namespace: policies2
+  name: default
+spec:
+  clusterSet: default

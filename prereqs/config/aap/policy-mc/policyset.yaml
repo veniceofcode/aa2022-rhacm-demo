@@ -35,4 +35,4 @@ spec:
       - key: name
         operator: In
         values:
-          - kind
+          - local-cluster
