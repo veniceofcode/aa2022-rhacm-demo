@@ -6,8 +6,7 @@ metadata:
     labels:
     app.kubernetes.io/name: nginx-ansible-demo
 spec:
-    tower_auth_secret: testbsu
-    job_template_name: Demo Job Template
+    job_template_name: f5-update-dns-load-balancer
     extra_vars:
       BASE_DOMAIN: jh21.dev06.red-chesterfield.com
       BASE_AWS_DOMAIN: dev06.red-chesterfield.com
