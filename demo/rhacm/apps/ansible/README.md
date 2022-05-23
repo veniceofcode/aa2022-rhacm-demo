@@ -8,8 +8,8 @@ oc version
 ## This example, allows you to demonstrate using an Ansible Pre & Post job.
 1. Add the subscription to your Red Hat Advanced Cluster Management for Kubernetes HUB
 ```
-clone https://github.com/open-cluster-management/demo-subscription-gitops.git
-oc apply -k demo-subscription-gitops/ansible/subscription/
+clone https://github.com/veniceofcode/aa2022-rhacm-demo.git
+oc apply -k aa2022-rhacm-demo/tree/main/demo/rhacm/subscription/
 ```
 ### Using
 - Navigate to the Manage applications in the UI. Click the `nginx-ansible-demo` Application name.
