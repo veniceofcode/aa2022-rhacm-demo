@@ -4,7 +4,7 @@ kind: AnsibleJob
 metadata:
     name: f5-update-dns-load-balancer
     labels:
-    app.kubernetes.io/name: nginx-ansible-demo
+    app.kubernetes.io/name: pacman
 spec:
     job_template_name: f5-update-dns-load-balancer
     extra_vars:
